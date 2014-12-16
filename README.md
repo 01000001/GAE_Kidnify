@@ -3,20 +3,6 @@ GAE_Kidnify
 
 Online platform for a cross-kidney exchange program in the Netherlands
 
-Instructions for installing and running the software:
-###############
-
-The application is available online at:
- http://kidnify.appspot.com/
-
-If you want to run it locally:
-
-Download the Download the Google App Engine SDK from:
-https://cloud.google.com/appengine/downloads
-
-Open the SDK, go to File -> Add existing application, add the the root directory of kidney_app. Hit Run, hit Browse, or go to localhost (you can find the Port which you opened for the application in the SDK).
-
-
 Software requirements for the application
 ##############
 
