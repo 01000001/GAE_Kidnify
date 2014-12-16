@@ -1,0 +1,95 @@
+{% include 'header.html' %}
+
+{% autoescape true%}
+
+		<body>
+				
+				
+				<div class = 'color_me'>
+				
+				<h1 class = 'log_out'> <a href = "{{ url|safe }}">{{url_linktext}}</a> </h1>
+				
+				</div>
+			
+				
+				<div class = 'matching_effect'>
+				<h1	>
+				<form action="/matching" method = "post">
+				<input type="submit" value="Match">
+				</h1>
+				</div>
+				
+				<div class = 'div'>
+		<h1 class = 'color_me'> Patients waiting for a kidney </h1>
+		</div>
+
+				
+				<div class = 'container'>
+				<hr>
+				</div>
+				
+		<!--Google Maps-->
+		
+		
+		
+		<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+     
+     var amc_patients = '{{ amc_patients }}';
+    var gumc_patients = '{{ gumc_patients }}';
+    var lumc_patients = '{{ lumc_patients }}';
+    var azm_patients = '{{ azm_patients }}';
+    var rn_patients = '{{ rn_patients }}';
+    var emcr_patients = '{{ emcr_patients }}';
+    var umc_patients = '{{ umc_patients }}';
+
+      function drawMarkersMap() {
+      var data = google.visualization.arrayToDataTable([
+        ['City',   'Transplant Centrum', 'Patients'],
+        ['Amsterdam',      'Academisch Medisch Centrum Amsterdam',    Number(amc_patients)],
+        ['Groningen',     'Universitair Medisch Centrum Groningen',    Number(gumc_patients)],
+        ['Leiden',     'Leids Universitair Medisch Centrum',    Number(lumc_patients)],
+        ['Maastricht',     'Academisch Ziekenhuis Maastricht',    Number(azm_patients)],
+        ['Nijmegen', 'Radboudumc, Nijmegen', Number(rn_patients)],
+        ['Rotterdam', 'Erasmus MC, Rotterdam', Number(emcr_patients)],
+        ['Utrecht', 'Universitair Medisch Centrum Utrecht', Number(umc_patients)]
+        
+      ]);
+
+      var options = {
+        region: 'NL',
+        displayMode: 'markers',
+        colorAxis: {colors: ['#821688', 'red']},
+        backgroundColor: 'transparent',
+        sizeAxis: {minValue: 0,  maxSize: 20},
+        /*datalessRegionColor : 'transparent',*/
+        
+      };
+
+      var map = new google.visualization.GeoChart(document.getElementById('chart_div'));
+      map.draw(data, options);
+    };
+    </script>
+    
+    
+    <div class="container">
+    <div class="google_map" id="chart_div" style="width: 800px; height: 478px;"></div>
+		</div>
+
+
+		<style> body {
+						background: url(pics/main_bg.jpg); 
+						background-size: 100%%; 
+						background-repeat: no-repeat;}
+		</style>
+		
+		</body>
+		
+		
+</html>
+
+{% endautoescape %}

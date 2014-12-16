@@ -1,0 +1,36 @@
+{% include 'header.html' %}
+
+{% autoescape true%}
+  
+  <body>
+				
+				<div class="container">
+				
+				<div class = "logo">
+				<img src="pics/kidneyapp.jpg" alt="Kidnify" style="width:304px;height:228px">
+				</div>
+				
+				<div class = "on_logo_text">
+				<h1 class = 'color_me'>Welcome to</h1>
+				</div>
+				
+				<div class = "under_logo_login">
+				<h1><a href = "{{ url|safe }}">{{url_linktext}}</a></h1>
+				
+				
+				</div>
+				
+				
+				
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+    
+    
+  </body>
+</html>
+
+{% endautoescape %}

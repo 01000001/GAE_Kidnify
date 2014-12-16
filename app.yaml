@@ -1,0 +1,33 @@
+####################################################
+# Kidney cross-exchange app
+# Medical Informatics Uva AMC
+# MAM04 - Biomedical Information Systems Engineering
+#
+# Attila Csala - attilacsala@gmail.com
+# December 2014, Amsterdam
+
+application: kidnify
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets  
+- url: /css
+  static_dir: css  
+- url: /js
+  static_dir: js   
+- url: /fonts
+  static_dir: fonts
+- url: /pics
+  static_dir: pics
+- url: /.*
+  script: appkidney.application
+  
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

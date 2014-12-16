@@ -1,0 +1,24 @@
+{% include 'header.html' %}
+
+{% autoescape true%}
+  
+  <body>
+				
+				<div class="container">
+				<h1 class = 'color_me'>{{display_text}}</h1>
+				
+				<h1>{{dinamic_part|safe}}</h1>
+				
+				<br>
+				
+				<div class = 'back_to_main'>
+				<h1 class = 'color_me'><a href = "/main">Main Page</a></h1>
+				</div>
+				
+				</div>
+				
+				
+  </body>
+</html>
+
+{% endautoescape %}

@@ -1,0 +1,69 @@
+{% include 'header.html' %}
+
+{% autoescape true%}
+
+		<body>
+				
+				<div class="container">
+				<h1 class = 'color_me'>Hi {{current_user}}. Please register your detatails</h1>
+				
+				<hr>
+				
+				<form action="/sign" method = "post">
+					Please select blood type needed:
+					<br>
+					<br>
+					<select name="blood_type_needed">
+						<option value="A">Group A</option>
+						<option value="B">Group B</option>
+						<option value="AB">Group AB</option>
+						<option value="O">Group O</option>
+					</select>
+					<br>
+					<br>
+					<form action="/sign" method = "post">
+					Please select blood type to offer:
+					<br>
+					<br>
+					<select name="blood_type_offered">
+						<option value="A">Group A</option>
+						<option selected='selected' value="B">Group B</option>
+						<option value="AB">Group AB</option>
+						<option value="O">Group O</option>
+					</select>
+					<br>
+					<br>
+					Please select transplant center:
+					<br>
+					<br>
+					<select name="center">
+						<option value="Academisch Medisch Centrum Amsterdam">Academisch Medisch Centrum Amsterdam</option>
+						<option value="Universitair Medisch Centrum Groningen">Universitair Medisch Centrum Groningen</option>
+						<option value="Leids Universitair Medisch Centrum">Leids Universitair Medisch Centrum</option>
+						<option value="Academisch Ziekenhuis Maastricht">Academisch Ziekenhuis Maastricht</option>
+						<option value="Radboudumc, Nijmegen">Radboudumc, Nijmegen</option>
+						<option value="Erasmus MC, Rotterdam">Erasmus MC, Rotterdam</option>
+						<option value="Universitair Medisch Centrum Utrecht">Universitair Medisch Centrum Utrecht</option>	
+					</select>
+					<br>
+				
+					<br>
+					<hr>
+					<input type="submit" value="Submit">
+				
+				</form>
+				</div>
+				
+		<div class="container">
+				<hr>
+				
+				<a href = "{{ url|safe }}">{{url_linktext}}</a>
+				
+				<hr>
+				</div>
+				
+		</body>
+		
+</html>
+
+{% endautoescape %}
