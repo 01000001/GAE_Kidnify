@@ -1,4 +1,4 @@
-GAE_Kidnify
+GAE_KidnyApp
 ===========
 
 Online platform for a cross-kidney exchange program in the Netherlands
@@ -6,7 +6,7 @@ Online platform for a cross-kidney exchange program in the Netherlands
 Software requirements for the application
 ##############
 
-List of features of Kidnify:
+List of features of KidnyApp:
 supports “cross-over matching” kidney donation between patients through data maintained from patients, taken their blood type into consideration
 enables users to log in to the application via their google account
 enables users to input information about the organ they are looking for and the organ they have to offer for the cross-over matching, regarding blood type
